@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: synthwave --default, forest --prefersdark;
+  root: ":root";
+  include: ;
+  exclude: ;
+  prefix: ;
+  logs: true;
+}
