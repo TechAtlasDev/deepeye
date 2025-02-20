@@ -1,12 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Barra_lateral from "../components/Barra_lateral.astro";
 import Cuerpo from "../components/Cuerpo.astro";
+import Barra from "../components/Barra_lateral";
 ---
 
 <Layout>
 	<main class="flex flex-row h-screen w-screen">
-		<Barra_lateral />
+		<Barra client:load />
 		<Cuerpo />
 	</main>
 </Layout>
