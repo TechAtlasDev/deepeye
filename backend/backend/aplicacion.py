@@ -2,6 +2,8 @@
 import fastapi # Programar la página web -> Para el backend
 import requests # Nos permitirá "hablar" con el intermediario de shodan
 
+import uvicorn
+
 # Creando la aplicación
 backend = fastapi.FastAPI()
 
@@ -23,3 +25,6 @@ def buscar(consulta, resultados, cantidad):
 
     # Crear una variable que contenga la URL
     return respuesta.json() # Nos devolverá la respuesta del intermediario
+
+def main():
+    uvicorn.run(backend, host="0.0.0.0", port=8000)

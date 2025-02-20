@@ -12,7 +12,7 @@ requests = "^2.32.3"
 uvicorn = "^0.34.0"
 
 [tool.poetry.scripts]
-prueba = "backend:iniciar_aplicacion"
+start = "backend.aplicacion:main"
 
 [build-system]
 requires = ["poetry-core"]
