@@ -7,6 +7,13 @@ import uvicorn
 # Creando la aplicación
 backend = fastapi.FastAPI()
 
+# Configurar los cors-headers
+@backend.middleware("http")
+async def cors_headers(request, call_next):
+    respuesta = await call_next(request)
+    respuesta.headers["Access-Control-Allow-Origin"] = "*"
+    return respuesta
+
 # Crear una nueva ruta
 @backend.get("/prueba") # http://backend/prueba
 def prueba():
