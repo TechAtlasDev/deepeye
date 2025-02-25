@@ -1,12 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Cuerpo from "../components/Cuerpo.astro";
-import Barra from "../components/Barra_lateral";
+import DashboardComponent from "../components/Dashboard";
 ---
 
 <Layout>
-	<main class="flex flex-row h-screen w-screen">
-		<Barra client:load />
-		<Cuerpo />
-	</main>
+	<DashboardComponent />
 </Layout>
