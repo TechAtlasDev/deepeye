@@ -1,13 +1,15 @@
-import React from 'react';
+"use client"
+
 import { useState } from "react";
 import realizar_busqueda from './cliente';
 
-export default function Barra() {
-  const [busqueda, setBusqueda] = useState('');
+export default function Barra({ setResultados }) {
+  const [busqueda, setBusqueda] = useState("");
 
   async function buscar() {
     let resultado = await realizar_busqueda(busqueda);
     console.log(resultado);
+    setResultados(resultado.results.total);
   }
 
   return (
