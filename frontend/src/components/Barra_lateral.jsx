@@ -1,11 +1,13 @@
 import React from 'react';
 import { useState } from "react";
+import realizar_busqueda from './cliente';
 
 export default function Barra() {
   const [busqueda, setBusqueda] = useState('');
 
-  function saludo() {
-    console.log("Hola");
+  async function buscar() {
+    let resultado = await realizar_busqueda(busqueda);
+    console.log(resultado);
   }
 
   return (
@@ -24,7 +26,7 @@ export default function Barra() {
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <button onClick={saludo} className="btn btn-primary w-full"> Buscar</button>
+        <button onClick={buscar} className="btn btn-primary w-full">Buscar</button>
       </div>
     </div>
   );
